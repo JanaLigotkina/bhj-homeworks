@@ -9,6 +9,7 @@ window.onload = function() {
 
 Array.from(modalSuccess).forEach(function(item) {
   item.addEventListener('click', function() {
+    modalOpen.classList.remove('modal_active');
     modalOpenSuccess.classList.add('modal_active');
   });
 });

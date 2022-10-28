@@ -10,11 +10,15 @@ menuMain.forEach(function (menuItem) {
       if (subMenuDown) {
         event.preventDefault();
 
-        menuItem.querySelectorAll('.menu_active').forEach(function (item) {
-          item.classList.remove('menu_active');
-        });
+        if (subMenuDown.classList.contains('menu_active')) {
+          subMenuDown.classList.remove('menu_active');
+        } else {
+          menuItem.querySelectorAll('.menu_active').forEach(function (item) {
+            item.classList.remove('menu_active');
+          });
 
-        subMenuDown.classList.add('menu_active');
+          subMenuDown.classList.add('menu_active');
+        }
       }
     })
   })
